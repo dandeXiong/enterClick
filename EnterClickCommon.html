@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+    <script src="../swd/swd-web/src/main/webapp/js/jquery.min.js"></script>
+    <script src="../swd/swd-web/src/main/webapp/js/formXiong.js"></script>
+    <script src="../swd/swd-web/src/main/webapp/js/commonXiong.js"></script>
+</head>
+
+<body>
+    <form class="formGroupParent" data-enterClick="submit_btn">
+        <input name="asdf" id="asdf">
+        <input name="asdfasdf" id="asdfasdf">
+        <input type="button" value="asdf" id="submit_btn" class="submit_btn">
+    </form>
+    <script>
+        $(".submit_btn").click(function() {
+            alert(1223)
+        })
+        enterClick(function() {
+            var elementClick = $(document.activeElement).parents(".formGroupParent").attr("data-enterClick");
+            if (elementClick) {
+                $("." + elementClick).click();
+            }
+        })
+    </script>
+</body>
+
+</html>
