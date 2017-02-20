@@ -4,26 +4,35 @@
 <head>
     <meta charset="utf-8">
     <title>无标题文档</title>
-    <script src="../swd/swd-web/src/main/webapp/js/jquery.min.js"></script>
-    <script src="../swd/swd-web/src/main/webapp/js/formXiong.js"></script>
-    <script src="../swd/swd-web/src/main/webapp/js/commonXiong.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/formXiong.js"></script>
+    <script src="js/commonXiong.js"></script>
 </head>
 
 <body>
-    <form class="formGroupParent" data-enterClick="submit_btn">
-        <input name="asdf" id="asdf">
-        <input name="asdfasdf" id="asdfasdf">
-        <input type="button" value="asdf" id="submit_btn" class="submit_btn">
-    </form>
+    <div>表单一
+        <form class="formGroupParent" data-enterClick="submit_btn">
+            手机：<input name="asdf" id="asdf" onkeyup="keyupForNumLen(this,11)"><br> 姓名：
+
+            <input name="asdfasdf" id="asdfasdf"><br>
+            <input type="button" value="asdf" id="submit_btn" class="submit_btn2">
+        </form>
+    </div>
+    <div>表单二
+        <form class="formGroupParent" data-enterClick="submit_btn2">
+            手机：<input name="asdf" id="asdf" onkeyup="keyupForNumLen(this,11)"><br> 姓名：
+
+            <input name="asdfasdf" id="asdfasdf"><br>
+            <input type="button" value="asdf" id="submit_btn2" class="submit_btn2">
+        </form>
+    </div>
     <script>
         $(".submit_btn").click(function() {
-            alert(1223)
+            alert("第一个表单提交")
         })
-        enterClick(function() {
-            var elementClick = $(document.activeElement).parents(".formGroupParent").attr("data-enterClick");
-            if (elementClick) {
-                $("." + elementClick).click();
-            }
+
+        $(".submit_btn2").click(function() {
+            alert("第二个表单提交")
         })
     </script>
 </body>
